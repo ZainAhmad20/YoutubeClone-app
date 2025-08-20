@@ -1,7 +1,6 @@
 import axios from "axios";
 
-//youtube endpoints
-export const BASE_URL = "https://youtube138.p.rapidapi.com/auto-complete/?q=";
+export const BASE_URL = "https://youtube-v31.p.rapidapi.com";
 
 const options = {
   params: {
@@ -9,12 +8,12 @@ const options = {
   },
   headers: {
     "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
-    "X-RapidAPI-Host": "youtube138.p.rapidapi.com",
+    "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
   },
 };
 
 export const fetchFromAPI = async (url) => {
-  const { data } = await axios.get(`${BASE_URL}${url}`, options);
+  const { data } = await axios.get(`${BASE_URL}/${url}`, options);
 
   return data;
 };
